@@ -64,3 +64,10 @@
   color: #eeeeee;
   box-shadow: 0 3px #9e9e9e;
 }
+
+.Hangman-restart{
+  text-align: center;
+  display: inline-block;
+  margin-top: 0;
+  width: 500px;
+}
