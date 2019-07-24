@@ -79,17 +79,23 @@ class Hangman extends Component {
         <img src={this.props.images[this.state.nWrong]} alt={altText}/>
         <p>Incorrect Guesses: {this.state.nWrong}</p>
         <p className='Hangman-word'>{(this.state.nWrong < this.props.maxWrong) ?  this.guessedWord() : this.state.answer}</p>
+        {}
         {(this.state.nWrong < this.props.maxWrong) 
-          ? <p className='Hangman-btns'>{this.generateButtons()}</p> 
+          ? (this.guessedWord().join("") === this.state.answer) 
+            ? <div>
+                <p>You Win!</p>
+                <button id="restartBtn" onClick = {this.restart}>Restart</button>
+              </div>
+            : <p className='Hangman-btns'>{this.generateButtons()}</p> 
           : <div>
               <p>Game Over!</p>
-              <button onClick = {this.restart}>Re</button>
+              <button id="restartBtn" onClick = {this.restart}>Restart</button>
             </div>
         }
-       
       </div>
     );
   }
 }
 
 export default Hangman;
+
