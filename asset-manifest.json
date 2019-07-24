@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hangman-react/static/css/main.cfb55353.chunk.css",
+    "main.js": "/hangman-react/static/js/main.92202035.chunk.js",
+    "main.js.map": "/hangman-react/static/js/main.92202035.chunk.js.map",
+    "runtime~main.js": "/hangman-react/static/js/runtime~main.6eb2dcd3.js",
+    "runtime~main.js.map": "/hangman-react/static/js/runtime~main.6eb2dcd3.js.map",
+    "static/js/2.8d248648.chunk.js": "/hangman-react/static/js/2.8d248648.chunk.js",
+    "static/js/2.8d248648.chunk.js.map": "/hangman-react/static/js/2.8d248648.chunk.js.map",
+    "index.html": "/hangman-react/index.html",
+    "precache-manifest.4457ee521182ff4cb58a506404605b20.js": "/hangman-react/precache-manifest.4457ee521182ff4cb58a506404605b20.js",
+    "service-worker.js": "/hangman-react/service-worker.js",
+    "static/css/main.cfb55353.chunk.css.map": "/hangman-react/static/css/main.cfb55353.chunk.css.map",
+    "static/media/0.jpg": "/hangman-react/static/media/0.db9097e8.jpg",
+    "static/media/1.jpg": "/hangman-react/static/media/1.fbff4784.jpg",
+    "static/media/2.jpg": "/hangman-react/static/media/2.c4ea9528.jpg",
+    "static/media/3.jpg": "/hangman-react/static/media/3.62a781c8.jpg",
+    "static/media/4.jpg": "/hangman-react/static/media/4.0f8ca81e.jpg",
+    "static/media/5.jpg": "/hangman-react/static/media/5.1b557aa7.jpg",
+    "static/media/6.jpg": "/hangman-react/static/media/6.c80394c2.jpg"
+  }
+}
