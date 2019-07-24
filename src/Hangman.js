@@ -23,11 +23,9 @@ class Hangman extends Component {
       guessed: new Set(), 
       answer: randomWord()
     };
-    this.handleGuess = this.handleGuess.bind(this);
-    this.restart = this.restart.bind(this);
   }
 
-  restart() {
+  restart = () =>{
     this.setState({
       nWrong: 0, 
       guessed: new Set(), 
@@ -48,7 +46,7 @@ class Hangman extends Component {
     - add to guessed letters
     - if not in answer, increase number-wrong guesses
   */
-  handleGuess(evt) {
+  handleGuess = evt =>{
     let ltr = evt.target.value;
     this.setState(st => ({
       guessed: st.guessed.add(ltr),
@@ -56,7 +54,6 @@ class Hangman extends Component {
     }));
   }
 
-  /** generateButtons: return array of letter buttons to render */
   generateButtons() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((ltr, i)=> (
       <button
@@ -73,24 +70,20 @@ class Hangman extends Component {
   /** render: render game */
   render() {
     let altText = `${this.state.nWrong} Wrong Guesses`;
+    let gameOver = !(this.state.nWrong < this.props.maxWrong) || (this.guessedWord().join("") === this.state.answer);
+    let message = (gameOver && (this.guessedWord().join("") === this.state.answer) ? 'You Win!': 'You Lose!');
     return (
       <div className='Hangman'>
         <h1>Hangman</h1>
         <img src={this.props.images[this.state.nWrong]} alt={altText}/>
         <p>Incorrect Guesses: {this.state.nWrong}</p>
         <p className='Hangman-word'>{(this.state.nWrong < this.props.maxWrong) ?  this.guessedWord() : this.state.answer}</p>
-        {}
-        {(this.state.nWrong < this.props.maxWrong) 
-          ? (this.guessedWord().join("") === this.state.answer) 
-            ? <div>
-                <p>You Win!</p>
+        {(!gameOver)
+            ? <p className='Hangman-btns'>{this.generateButtons()}</p> 
+            : <div>
+                <p>{ message }</p>
                 <button id="restartBtn" onClick = {this.restart}>Restart</button>
               </div>
-            : <p className='Hangman-btns'>{this.generateButtons()}</p> 
-          : <div>
-              <p>Game Over!</p>
-              <button id="restartBtn" onClick = {this.restart}>Restart</button>
-            </div>
         }
       </div>
     );
